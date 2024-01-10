@@ -8,7 +8,7 @@ void merging(vector<int> &arr, int mid, int low, int high)
     int right = mid + 1;
     while (left <= mid && right <= high)
     {
-        if (arr[left] < arr[right])
+        if (arr[left] <= arr[right])
         {
             temp.push_back(arr[left]);
             left++;
@@ -40,7 +40,7 @@ void merging(vector<int> &arr, int mid, int low, int high)
 
 void mergeSorting(vector<int> &arr, int low, int high)
 {
-    if (low == high)
+    if (low >= high)
         return;
     int mid = (low + high) / 2;
     mergeSorting(arr, low, mid);
